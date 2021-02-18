@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.behavior.lastmodifier",
-    version="0.0.1a1",
+    version="1.0.0rc1",
     description="Adds a behavior that tracks down the last user that modified an object",  # noqa: E501
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
