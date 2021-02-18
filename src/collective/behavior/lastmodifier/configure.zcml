@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.behavior.lastmodifier"
+    >
+
+  <i18n:registerTranslations directory="locales" />
+
+  <plone:behavior
+      name="plone.last_modifier"
+      title="Last modifier"
+      description="Store the user id of the operator whenever the object is modified"
+      provides=".behavior.ILastModifier"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      factory=".behavior.ILastModifier"
+      marker=".behavior.ILastModifier"
+      />
+
+  <subscriber handler=".behavior.on_added" />
+  <subscriber handler=".behavior.on_modified" />
+
+</configure>

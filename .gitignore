@@ -1,0 +1,34 @@
+# dirs
+# excludes
+# files
+*.egg-info
+*.log
+*.mo
+*.py?
+*.swp
+.coverage
+.installed.cfg
+.mr.developer.cfg
+.tox/
+.vscode/
+/.coverage.py3*
+/py38
+bin/
+buildout-cache/
+develop-eggs/
+dist/*
+eggs/
+htmlcov/
+include/
+lib/
+lib64
+local/
+log.html
+node_modules/
+output.xml
+package.json
+parts/
+pip-selfcheck.json
+report.html
+reports/
+var/
