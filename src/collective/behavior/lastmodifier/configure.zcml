@@ -13,7 +13,7 @@
       description="Store the user id of the operator whenever the object is modified"
       provides=".behavior.ILastModifier"
       for="plone.dexterity.interfaces.IDexterityContent"
-      factory=".behavior.ILastModifier"
+      factory=".behavior.LastModifier"
       marker=".behavior.ILastModifier"
       />
 

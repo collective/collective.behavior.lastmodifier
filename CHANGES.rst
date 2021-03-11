@@ -5,8 +5,8 @@ Changelog
 1.0.0rc2 (unreleased)
 ---------------------
 
-- Nothing changed yet.
-
+- Added a ``tracking_disabled`` context manager to disable tracking the last modifier
+  [ale-rt]
 
 1.0.0rc1 (2021-02-18)
 ---------------------

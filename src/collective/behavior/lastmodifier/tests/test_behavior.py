@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
+from collective.behavior.lastmodifier.behavior import tracking_disabled
 from collective.behavior.lastmodifier.testing import INTEGRATION_TESTING
 from plone import api
 from zope.container.contained import ObjectModifiedEvent
@@ -58,3 +59,20 @@ class TestBehavior(unittest.TestCase):
             view = obj.restrictedTraverse("@@view")()
 
         self.assertIn("last_modifier", view)
+
+    def test_behavior_disabled(self):
+        with tracking_disabled():
+            with api.env.adopt_user("admin"):
+                obj = self._create_doc()
+            self.assertEqual(obj.last_modifier, None)
+
+            with api.env.adopt_user("admin"):
+                api.user.create(
+                    email="editor@example.com", username="editor", roles=["Editor"]
+                )
+
+            # When modified picks up the editor userid
+            with api.env.adopt_user("editor"):
+                notify(ObjectModifiedEvent(obj))
+
+            self.assertEqual(obj.last_modifier, None)
