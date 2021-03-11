@@ -19,6 +19,14 @@ with the currently authenticated user id:
 - when an object is created
 - every time an ``ObjectModifiedEvent`` is fired.
 
+There is a ``tracking_disabled`` context manager that can be used to disable tracking.
+This might come handy, for example during migrations::
+
+    from collective.behavior.lastmodifier.behavior import tracking_disabled
+
+    with tracking_disabled():
+        ...
+
 Installation
 ------------
 
