@@ -40,6 +40,14 @@ class LastModifier(object):
     def __init__(self, context):
         self.context = context
 
+    @property
+    def last_modifier(self):
+        return self.context.last_modifier
+
+    @last_modifier.setter
+    def last_modifier(self, value):
+        self.context.last_modifier = value
+
 
 @contextmanager
 def tracking_disabled(request=_missing_value):
